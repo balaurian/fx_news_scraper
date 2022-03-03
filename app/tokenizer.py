@@ -64,7 +64,7 @@ class fx_news_tokenizer():
                 found_pair = trade_pair
         return found_pair
 
-    # returns a dataframe with pairs' bull/bear direction by calculating a sentiment score
+    # returns a dataframe with pairs' bull/bear direction by
     # comparing tokenized news to a bear/bull financial vocabulary 
     def sentimental_calculator(self, news):
         some_news = []
