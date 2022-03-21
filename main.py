@@ -4,7 +4,7 @@ import app.news_sort
 
 def start():
     while True:
-        usr_in = input('\n1. start scaping\n2. tokenization\n3. start sorting\n0. exit\n\ndo something\n')
+        usr_in = input('\n1. start scraping\n2. tokenization\n3. start sorting\n0. exit\n\ndo something\n')
         if usr_in == '1':
             print ('\n-->start scraping ...\n')
             news_scraper = app.scraper.fx_news_scraper()
