@@ -9,7 +9,7 @@ class fx_news_scraper():
         # 
         # The scraped csv file is written on disk after the whole scraping is done. 
         # This is a problem when the connection drops and all scraping is lost 
-        # Therefore you need to set how many pages you would need. 
+        # Therefore you need to set how many pages you would need to scrap. 
         # Keep this number low while testing/debugging
         #
         self.number_of_pages = 3
