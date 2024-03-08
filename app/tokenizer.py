@@ -17,7 +17,7 @@ class fx_news_tokenizer():
         self.eng_stopwords = stopwords.words('english') 
         self.scraped_news_df = None
         try:
-            self.scraped_news_df = pd.read_csv(self.fx_news_path, header = 0, sep = ',', error_bad_lines = False, encoding = 'utf-8', parse_dates = [2])
+            self.scraped_news_df = pd.read_csv(self.fx_news_path, header = 0, sep = ',', on_bad_lines = "skip", encoding = 'utf-8', parse_dates = [2])
         
         except:
             print ('no archive file. try creating one first')

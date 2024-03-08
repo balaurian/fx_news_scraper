@@ -17,9 +17,9 @@ with open('app/data/fx-bull-terms.csv', 'r') as bulls:
 #with open('app/data/fx-pairs-slang.csv', 'r') as pairs:
 #    pair_vocabulary = pairs.read()
 
-pair_list = pd.read_csv('app/data/fx-pairs-collection.csv', header = 0, sep = ',', error_bad_lines = False, encoding = 'utf-8')
+pair_list = pd.read_csv('app/data/fx-pairs-collection.csv', header = 0, sep = ',', on_bad_lines = "skip", encoding = 'utf-8')
 
-pair_vocabulary = pd.read_csv('app/data/fx-pairs-slang.csv', header = 0, sep = ',', error_bad_lines = False, encoding = 'utf-8', parse_dates = [2])
+pair_vocabulary = pd.read_csv('app/data/fx-pairs-slang.csv', header = 0, sep = ',', on_bad_lines = "skip", encoding = 'utf-8', parse_dates = [2])
 
 def pair_to_dictionary(pair_vocabulary):
     pair_vocab_dic = defaultdict(dict)

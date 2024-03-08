@@ -6,7 +6,7 @@ import math
 
 def start_sorting():
     try:
-        df = pd.read_csv('app/data/fx-news-tokenized.csv', header = 0, sep = ',', error_bad_lines = False, encoding = 'utf-8', parse_dates = [2])
+        df = pd.read_csv('app/data/fx-news-tokenized.csv', header = 0, sep = ',', on_bad_lines = "skip", encoding = 'utf-8', parse_dates = [2])
         sorted_orders = []
         for i in range(0,df.shape[0]):
             for pair in df.pair[[i]]:
