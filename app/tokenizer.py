@@ -16,6 +16,9 @@ class fx_news_tokenizer():
         self.fx_news_path = 'app/data/fx-news-archive.csv'
         self.eng_stopwords = stopwords.words('english') 
         self.scraped_news_df = None
+        
+        self.fx_news_tokenizer_path = 'app/data/fx-news-tokenized.csv'
+        
         try:
             self.scraped_news_df = pd.read_csv(self.fx_news_path, header = 0, sep = ',', on_bad_lines = "skip", encoding = 'utf-8', parse_dates = [2])
         
@@ -132,9 +135,9 @@ class fx_news_tokenizer():
             news_dataframe_processed = self.setup_and_token(self.scraped_news_df)
             some_news = pd.DataFrame(self.sentimental_calculator(news_dataframe_processed), columns =['page', 'date', 'title', 'tokenized', 'action', 'pair'])
             try:
-                some_news.to_csv('app/data/fx-news-tokenized.csv')
+                some_news.to_csv(self.fx_news_tokenizer_path)
                 print ('tokenizing completed')
-                print ('output --> app/data/fx-news-tokenized.csv')
+                print (f'output --> {self.fx_news_tokenizer_path}')
             
             except:
                 print ( 'tokenized csv write error!')
